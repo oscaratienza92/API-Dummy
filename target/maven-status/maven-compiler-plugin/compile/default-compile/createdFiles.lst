@@ -1,0 +1,4 @@
+com\api\dummy\controller\DummyAPIController.class
+com\api\dummy\model\Model.class
+com\api\dummy\ApiDummyApplication.class
+com\api\dummy\config\SwaggerConfig.class
