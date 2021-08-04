@@ -3,10 +3,12 @@ package com.api.dummy.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,8 +23,15 @@ public class DummyAPIController {
 		
 	@RequestMapping(value = "/API-dummy", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
 	@ResponseBody
-	public String postApiDummy() {
-			return "Proceso Ejecutado, se recibio el post";		
+	public String postApiDummy(@RequestBody LinkedHashMap<?, ?> model) {
+		
+		String texto = (String) model.get("texto");
+		
+		if (texto.contentEquals("hola")) {
+			return "hola";
+		} else {
+			return "chau";
+		}
 	}
 	
 	@RequestMapping(value = "/API-dummy", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
