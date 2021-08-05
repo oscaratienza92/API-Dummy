@@ -28,7 +28,7 @@ public class DummyAPIController {
 		String texto = (String) model.get("texto");
 		
 		if (texto.contentEquals("hola")) {
-			return "hola-nuevo";
+			return "hola-nuevo-docker";
 		} else {
 			return "chau";
 		}
