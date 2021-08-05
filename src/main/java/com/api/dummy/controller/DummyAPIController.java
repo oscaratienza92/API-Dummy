@@ -28,7 +28,7 @@ public class DummyAPIController {
 		String texto = (String) model.get("texto");
 		
 		if (texto.contentEquals("hola")) {
-			return "hola";
+			return "hola-nuevo";
 		} else {
 			return "chau";
 		}
